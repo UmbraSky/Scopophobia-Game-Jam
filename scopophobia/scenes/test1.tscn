@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://foetv4uekqc" path="res://scenes/player.tscn" id="2_h46hq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oydga"]
+size = Vector2(20, 17.0417)
 
 [sub_resource type="QuadMesh" id="QuadMesh_oydga"]
 
@@ -19,9 +20,10 @@ text = "1"
 metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_h46hq")]
-position = Vector2(-564, 73)
+position = Vector2(-796, 74)
 SPEED = 500.0
 JUMP_VELOCITY = -1000.0
+countdown_duration = 30.0
 
 [node name="Start Platform" type="StaticBody2D" parent="."]
 modulate = Color(0.737618, 0.171908, 0, 1)
@@ -29,7 +31,7 @@ position = Vector2(355, -72)
 scale = Vector2(42.408, 5.53845)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Start Platform"]
-position = Vector2(-22.873, 34.3056)
+position = Vector2(-22.873, 35.7848)
 shape = SubResource("RectangleShape2D_oydga")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Start Platform"]
@@ -44,6 +46,7 @@ scale = Vector2(42.408, 5.53845)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(-22.873, 34.3056)
+scale = Vector2(0.985379, 1.0411)
 shape = SubResource("RectangleShape2D_oydga")
 one_way_collision = true
 
@@ -59,6 +62,7 @@ scale = Vector2(42.408, 5.53845)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 position = Vector2(-22.873, 34.3056)
+scale = Vector2(0.987938, 1.01675)
 shape = SubResource("RectangleShape2D_oydga")
 one_way_collision = true
 
@@ -74,6 +78,7 @@ scale = Vector2(42.408, 5.53845)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
 position = Vector2(-22.873, 34.3056)
+scale = Vector2(0.981991, 1.01187)
 shape = SubResource("RectangleShape2D_oydga")
 one_way_collision = true
 
@@ -89,6 +94,7 @@ scale = Vector2(42.408, 5.53845)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
 position = Vector2(-22.873, 34.3056)
+scale = Vector2(0.986167, 0.685181)
 shape = SubResource("RectangleShape2D_oydga")
 one_way_collision = true
 
@@ -104,6 +110,7 @@ scale = Vector2(42.408, 5.53845)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
 position = Vector2(-22.873, 34.3056)
+scale = Vector2(1.07406, 1.05597)
 shape = SubResource("RectangleShape2D_oydga")
 one_way_collision = true
 
@@ -119,6 +126,7 @@ scale = Vector2(42.408, 5.53845)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
 position = Vector2(-22.873, 34.3056)
+scale = Vector2(0.947816, 1.01195)
 shape = SubResource("RectangleShape2D_oydga")
 one_way_collision = true
 
@@ -134,6 +142,7 @@ scale = Vector2(42.408, 5.53845)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8"]
 position = Vector2(-22.873, 34.3056)
+scale = Vector2(1.13202, 1.01642)
 shape = SubResource("RectangleShape2D_oydga")
 one_way_collision = true
 
