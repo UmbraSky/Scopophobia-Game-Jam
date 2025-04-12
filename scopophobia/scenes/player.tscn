@@ -24,7 +24,7 @@ position = Vector2(153, -170)
 shape = SubResource("RectangleShape2D_g2els")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(156, -352)
+position = Vector2(156, -192)
 zoom = Vector2(0.6, 0.6)
 
 [node name="Timer" type="Timer" parent="."]

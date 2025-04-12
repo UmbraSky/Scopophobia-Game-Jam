@@ -22,7 +22,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(21, 69)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(63, 429)
+position = Vector2(56, 277)
 scale = Vector2(42.408, 5.53845)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
@@ -33,3 +33,6 @@ position = Vector2(-0.0471649, -0.902779)
 scale = Vector2(19.7736, 15.1798)
 mesh = SubResource("QuadMesh_u577f")
 texture = SubResource("MeshTexture_cy281")
+
+[node name="SpawnPoint" type="Node2D" parent="."]
+position = Vector2(7, 85)
