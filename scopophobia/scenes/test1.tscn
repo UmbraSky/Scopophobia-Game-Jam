@@ -19,17 +19,125 @@ text = "1"
 metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_h46hq")]
-position = Vector2(-344, 13)
+position = Vector2(-564, 73)
+SPEED = 500.0
+JUMP_VELOCITY = -1000.0
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Start Platform" type="StaticBody2D" parent="."]
+modulate = Color(0.737618, 0.171908, 0, 1)
 position = Vector2(355, -72)
 scale = Vector2(42.408, 5.53845)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Start Platform"]
 position = Vector2(-22.873, 34.3056)
 shape = SubResource("RectangleShape2D_oydga")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Start Platform"]
+position = Vector2(-22.8495, 34.6667)
+scale = Vector2(19.7736, 15.1798)
+mesh = SubResource("QuadMesh_oydga")
+texture = SubResource("MeshTexture_h46hq")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(1419, -252)
+scale = Vector2(42.408, 5.53845)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-22.873, 34.3056)
+shape = SubResource("RectangleShape2D_oydga")
+one_way_collision = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D2"]
+position = Vector2(-22.8495, 34.6667)
+scale = Vector2(19.7736, 15.1798)
+mesh = SubResource("QuadMesh_oydga")
+texture = SubResource("MeshTexture_h46hq")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(1942, -570)
+scale = Vector2(42.408, 5.53845)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-22.873, 34.3056)
+shape = SubResource("RectangleShape2D_oydga")
+one_way_collision = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D3"]
+position = Vector2(-22.8495, 34.6667)
+scale = Vector2(19.7736, 15.1798)
+mesh = SubResource("QuadMesh_oydga")
+texture = SubResource("MeshTexture_h46hq")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(955, -791)
+scale = Vector2(42.408, 5.53845)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(-22.873, 34.3056)
+shape = SubResource("RectangleShape2D_oydga")
+one_way_collision = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D4"]
+position = Vector2(-22.8495, 34.6667)
+scale = Vector2(19.7736, 15.1798)
+mesh = SubResource("QuadMesh_oydga")
+texture = SubResource("MeshTexture_h46hq")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(-564, 9)
+scale = Vector2(42.408, 5.53845)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(-22.873, 34.3056)
+shape = SubResource("RectangleShape2D_oydga")
+one_way_collision = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D5"]
+position = Vector2(-22.8495, 34.6667)
+scale = Vector2(19.7736, 15.1798)
+mesh = SubResource("QuadMesh_oydga")
+texture = SubResource("MeshTexture_h46hq")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+position = Vector2(-1521, -194)
+scale = Vector2(42.408, 5.53845)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2(-22.873, 34.3056)
+shape = SubResource("RectangleShape2D_oydga")
+one_way_collision = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D6"]
+position = Vector2(-22.8495, 34.6667)
+scale = Vector2(19.7736, 15.1798)
+mesh = SubResource("QuadMesh_oydga")
+texture = SubResource("MeshTexture_h46hq")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="."]
+position = Vector2(-379, -786)
+scale = Vector2(42.408, 5.53845)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
+position = Vector2(-22.873, 34.3056)
+shape = SubResource("RectangleShape2D_oydga")
+one_way_collision = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D7"]
+position = Vector2(-22.8495, 34.6667)
+scale = Vector2(19.7736, 15.1798)
+mesh = SubResource("QuadMesh_oydga")
+texture = SubResource("MeshTexture_h46hq")
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="."]
+position = Vector2(-1306, -581)
+scale = Vector2(42.408, 5.53845)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8"]
+position = Vector2(-22.873, 34.3056)
+shape = SubResource("RectangleShape2D_oydga")
+one_way_collision = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D8"]
 position = Vector2(-22.8495, 34.6667)
 scale = Vector2(19.7736, 15.1798)
 mesh = SubResource("QuadMesh_oydga")

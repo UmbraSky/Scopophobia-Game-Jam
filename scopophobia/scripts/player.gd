@@ -23,11 +23,15 @@ func _input(event):
 			print("Switching Scenes Manually!")
 			
 			if get_tree().current_scene.name != "Main" and current_platform_id <= 0:
+				HUD.play_transition()
+				await get_tree().create_timer(0.6).timeout
 				SceneManager.player_position = self.global_position
 				SceneManager.switch_to_scene("res://scenes/main.tscn")
 			
 			else:
 				if platform_scenes.has(current_platform_id):
+					HUD.play_transition()
+					await get_tree().create_timer(0.6).timeout
 					var scene = platform_scenes[current_platform_id]
 					SceneManager.player_position = self.global_position
 					SceneManager.switch_to_scene(scene.resource_path)
@@ -66,7 +70,14 @@ func _physics_process(delta: float) -> void:
 
 func _on_timer_timeout():
 	print("Timer finished. Current platform ID: ", current_platform_id)
-
+	
+	if HUD.transition_stage == 0:
+		HUD.play_transition()
+		await get_tree().create_timer(0.6).timeout
+	elif HUD.transition_stage == 1:
+		HUD.play_transition()
+		await get_tree().create_timer(0.6).timeout
+	
 	if platform_scenes.has(current_platform_id):
 		var scene = platform_scenes[current_platform_id]
 		SceneManager.player_position = self.global_position
