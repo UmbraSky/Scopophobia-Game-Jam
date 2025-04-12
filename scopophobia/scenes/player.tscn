@@ -1,28 +1,30 @@
 [gd_scene load_steps=5 format=3 uid="uid://foetv4uekqc"]
 
-[ext_resource type="Texture2D" uid="uid://bspv4eflq5yg0" path="res://icon.svg" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bjmt5scm5nj1p" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://c8yw0mmcguces" path="res://images/player_scopophobia.png" id="2_g2els"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
-size = Vector2(60, 126)
+size = Vector2(303, 345)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
-size = Vector2(74, 137)
+size = Vector2(311, 343)
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
+position = Vector2(-151, 194)
 script = ExtResource("1_g2els")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1, -65)
-scale = Vector2(0.492188, 1)
-texture = ExtResource("1_3vyb7")
+position = Vector2(153, -196.5)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_g2els")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -66)
+position = Vector2(150.5, -197.5)
 shape = SubResource("RectangleShape2D_g2els")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(8, -171)
+position = Vector2(156, -352)
 zoom = Vector2(0.6, 0.6)
 
 [node name="Timer" type="Timer" parent="."]
@@ -30,5 +32,7 @@ zoom = Vector2(0.6, 0.6)
 [node name="Area2D" type="Area2D" parent="." groups=["player"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -64.5)
+position = Vector2(151.5, -198.5)
 shape = SubResource("RectangleShape2D_qhqgy")
+
+[node name="Marker2D" type="Marker2D" parent="."]

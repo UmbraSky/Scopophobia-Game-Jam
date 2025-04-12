@@ -14,6 +14,7 @@ func _on_area_entered(area: Area2D):
 		print("Player entered platform ", platform_id)
 		player.current_platform_id = platform_id
 		player.register_platform(platform_id, scene_to_load)
+		print("Current Player Platform ID: ", player.current_platform_id)
 
 func _on_area_exited(area: Area2D):
 	var player = area.get_parent()
@@ -21,3 +22,4 @@ func _on_area_exited(area: Area2D):
 		if player.current_platform_id == platform_id:
 			print("Player exited platform ", platform_id)
 			player.current_platform_id = -1
+			print("Current Player Platform ID: ", player.current_platform_id)

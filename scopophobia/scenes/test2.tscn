@@ -1,25 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://0xafgnht3tqh"]
+[gd_scene load_steps=5 format=3 uid="uid://0xafgnht3tqh"]
 
 [ext_resource type="PackedScene" uid="uid://foetv4uekqc" path="res://scenes/player.tscn" id="2_cy281"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u577f"]
 
+[sub_resource type="QuadMesh" id="QuadMesh_u577f"]
+
+[sub_resource type="MeshTexture" id="MeshTexture_cy281"]
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TextEdit" type="TextEdit" parent="."]
-offset_left = 399.0
-offset_top = 259.0
-offset_right = 671.0
-offset_bottom = 350.0
+offset_left = -103.0
+offset_top = -306.0
+offset_right = 169.0
+offset_bottom = -215.0
 text = "2"
 metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_cy281")]
-position = Vector2(850, 48)
+position = Vector2(21, 69)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(558, 511)
+position = Vector2(63, 429)
 scale = Vector2(42.408, 5.53845)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_u577f")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
+position = Vector2(-0.0471649, -0.902779)
+scale = Vector2(19.7736, 15.1798)
+mesh = SubResource("QuadMesh_u577f")
+texture = SubResource("MeshTexture_cy281")
