@@ -14,3 +14,16 @@ config/name="Scopophobia"
 run/main_scene="uid://bagiqmqgtjn7b"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SceneManager="*res://scripts/SceneManager.gd"
+HUD="*res://scenes/HUD.tscn"
+
+[global_group]
+
+player=""
+
+[physics]
+
+2d/default_gravity=1259.27

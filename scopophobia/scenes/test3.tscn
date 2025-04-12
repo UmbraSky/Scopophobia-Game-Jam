@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtc6oc68k6up4"]
+
+[ext_resource type="PackedScene" uid="uid://foetv4uekqc" path="res://scenes/player.tscn" id="2_nytjx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ilhlq"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 367.0
+offset_top = 1670.0
+offset_right = 639.0
+offset_bottom = 1761.0
+text = "3"
+metadata/_edit_use_anchors_ = true
+
+[node name="Player" parent="." instance=ExtResource("2_nytjx")]
+position = Vector2(545, -180)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1633, 329)
+scale = Vector2(42.408, 5.53845)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-26.363, 298)
+shape = SubResource("RectangleShape2D_ilhlq")

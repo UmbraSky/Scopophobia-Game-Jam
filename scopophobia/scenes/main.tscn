@@ -1,51 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://bagiqmqgtjn7b"]
+[gd_scene load_steps=7 format=3 uid="uid://bagiqmqgtjn7b"]
 
 [ext_resource type="PackedScene" uid="uid://foetv4uekqc" path="res://scenes/player.tscn" id="1_o5qli"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_o5qli"]
-size = Vector2(1000, 150)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
-size = Vector2(996, 154)
+[ext_resource type="PackedScene" uid="uid://bslet7l63no4c" path="res://scenes/platform.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://0xafgnht3tqh" path="res://scenes/test2.tscn" id="3_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://dtc6oc68k6up4" path="res://scenes/test3.tscn" id="4_tefeu"]
+[ext_resource type="PackedScene" uid="uid://ddwerr7kmnxb7" path="res://scenes/test1.tscn" id="5_o6xl0"]
+[ext_resource type="Script" uid="uid://b6iclrg5dddpo" path="res://scripts/SceneManager.gd" id="6_tefeu"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_o5qli")]
 position = Vector2(118, 369)
+collision_mask = 3
 SPEED = 500.0
-JUMP_VELOCITY = -680.0
+JUMP_VELOCITY = -800.0
 
-[node name="Platform" type="StaticBody2D" parent="."]
+[node name="Platform1" parent="." instance=ExtResource("2_0wfyh")]
+position = Vector2(-503, 298)
+collision_mask = 3
+platform_id = 1
+scene_to_load = ExtResource("5_o6xl0")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform"]
-modulate = Color(0.595828, 0.595828, 0.595828, 1)
-position = Vector2(573, 498)
-mesh = SubResource("QuadMesh_o5qli")
+[node name="Platform2" parent="." instance=ExtResource("2_0wfyh")]
+position = Vector2(558, 511)
+collision_mask = 3
+platform_id = 2
+scene_to_load = ExtResource("3_tbgi4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
-position = Vector2(574, 499)
-shape = SubResource("RectangleShape2D_0wfyh")
+[node name="Platform3" parent="." instance=ExtResource("2_0wfyh")]
+position = Vector2(1663, 329)
+collision_mask = 3
+platform_id = 3
+scene_to_load = ExtResource("4_tefeu")
 
-[node name="Platform2" type="StaticBody2D" parent="."]
-position = Vector2(1043, -210)
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 15.0
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform2"]
-modulate = Color(0.595828, 0.595828, 0.595828, 1)
-position = Vector2(573, 498)
-mesh = SubResource("QuadMesh_o5qli")
+[node name="CountdownLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2"]
-position = Vector2(574, 499)
-shape = SubResource("RectangleShape2D_0wfyh")
+[node name="SceneManager" type="Node" parent="."]
+script = ExtResource("6_tefeu")
 
-[node name="Platform3" type="StaticBody2D" parent="."]
-position = Vector2(-1019, -207)
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform3"]
-modulate = Color(0.595828, 0.595828, 0.595828, 1)
-position = Vector2(573, 498)
-mesh = SubResource("QuadMesh_o5qli")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3"]
-position = Vector2(574, 499)
-shape = SubResource("RectangleShape2D_0wfyh")
+[connection signal="timeout" from="Timer" to="Platform2" method="_on_timer_timeout"]
