@@ -5,6 +5,13 @@ extends CanvasLayer
 @onready var top_lid: ColorRect = $TopLid
 @onready var bottom_lid: ColorRect = $BottomLid
 
+@onready var hearts_container := $"HeartsContainer"  # Node with Sprite or TextureRects as hearts
+
+func update_hearts(hearts: int):
+	for i in hearts_container.get_child_count():
+		var heart = hearts_container.get_child(i)
+		heart.visible = i < hearts
+
 var transition_stage := 0
 
 func set_countdown_text(text: String):
