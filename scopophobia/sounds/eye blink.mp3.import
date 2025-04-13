@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://0pftou6tdwt3"
+path="res://.godot/imported/eye blink.mp3-0c61fb85b8a12353f85c722f35e85d04.mp3str"
+
+[deps]
+
+source_file="res://sounds/eye blink.mp3"
+dest_files=["res://.godot/imported/eye blink.mp3-0c61fb85b8a12353f85c722f35e85d04.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

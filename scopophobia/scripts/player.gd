@@ -13,9 +13,11 @@ var current_platform_id: int
 var platform_scenes := {}
 
 func _ready():
+	add_to_group("player")
 	timer.wait_time = countdown_duration
 	timer.timeout.connect(_on_timer_timeout)
 	set_process(true)
+	HUD.update_hearts(GameState.hearts)
 
 	# Start the timer ONLY if we're starting directly in the HUB
 	if get_tree().current_scene.name == "Main":
@@ -96,3 +98,15 @@ func _on_timer_timeout():
 		print("Timer ended in a platform scene — waiting for manual return.")
 		can_leave_platform = true
 		timer.stop()
+
+func on_fall_out_of_world():
+	if GameState.hearts > 0:
+		GameState.hearts -= 1
+		HUD.update_hearts(GameState.hearts)
+
+	if GameState.hearts <= 0:
+		print("Player died!")
+		# Handle game over
+	else:
+		HUD.play_transition()
+		SceneManager.switch_to_scene(SceneManager.HUB_SCENE_PATH)

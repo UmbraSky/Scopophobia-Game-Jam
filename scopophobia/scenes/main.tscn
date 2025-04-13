@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bagiqmqgtjn7b"]
+[gd_scene load_steps=9 format=3 uid="uid://bagiqmqgtjn7b"]
 
 [ext_resource type="PackedScene" uid="uid://foetv4uekqc" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://bslet7l63no4c" path="res://scenes/platform.tscn" id="2_0wfyh"]
@@ -6,12 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://dtc6oc68k6up4" path="res://scenes/test3.tscn" id="4_tefeu"]
 [ext_resource type="PackedScene" uid="uid://ddwerr7kmnxb7" path="res://scenes/test1.tscn" id="5_o6xl0"]
 [ext_resource type="Script" uid="uid://b6iclrg5dddpo" path="res://scripts/SceneManager.gd" id="6_tefeu"]
+[ext_resource type="Script" uid="uid://dr6mwhgdsaji1" path="res://scripts/world_border.gd" id="7_o6xl0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tipki"]
+size = Vector2(4174, 20)
 
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_o5qli")]
-position = Vector2(-1452, 361)
-collision_mask = 3
+position = Vector2(-950, 111)
 SPEED = 400.0
 JUMP_VELOCITY = -800.0
 acceleration = 700.0
@@ -46,4 +49,17 @@ offset_bottom = 23.0
 [node name="SceneManager" type="Node" parent="."]
 script = ExtResource("6_tefeu")
 
+[node name="WorldBorder" type="Area2D" parent="."]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(-199, -343)
+scale = Vector2(0.818125, 5.13507)
+script = ExtResource("7_o6xl0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBorder"]
+position = Vector2(1177, 659)
+scale = Vector2(4.4985, 30.9119)
+shape = SubResource("RectangleShape2D_tipki")
+
 [connection signal="timeout" from="Timer" to="Platform2" method="_on_timer_timeout"]
+[connection signal="body_entered" from="WorldBorder" to="WorldBorder" method="_on_body_entered"]
