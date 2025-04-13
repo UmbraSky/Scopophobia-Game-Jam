@@ -1,15 +1,16 @@
 extends CharacterBody2D
 
-@export var SPEED = 300.0
-@export var JUMP_VELOCITY = -400.0
+@export var SPEED := 300.0
+@export var JUMP_VELOCITY := -400.0
 @export var countdown_duration := 10.0  # seconds
+@export var acceleration := 800.0  # How quickly the player accelerates
+@export var deceleration := 600.0  # How quickly the player decelerates when not moving
 
 @onready var timer: Timer = $Timer
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
-var current_platform_id: int 
-var platform_scenes := {}  
-
+var current_platform_id: int
+var platform_scenes := {}
 
 func _ready():
 	timer.wait_time = countdown_duration
@@ -21,6 +22,7 @@ func _ready():
 		timer.start()
 
 var can_leave_platform := false
+
 func _input(event):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
 		var is_in_hub := get_tree().current_scene.name == "Main"
@@ -60,13 +62,16 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Handle horizontal movement.
+	# Handle horizontal movement with acceleration and deceleration.
 	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
+	if direction != 0:
+		# Accelerate towards target speed
+		velocity.x = move_toward(velocity.x, direction * SPEED, acceleration * delta)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		# Decelerate towards zero when no input
+		velocity.x = move_toward(velocity.x, 0, deceleration * delta)
 	
+	# Flip sprite depending on direction
 	if direction > 0:
 		sprite_2d.flip_h = true 
 	if direction < 0:
@@ -90,4 +95,4 @@ func _on_timer_timeout():
 	else:
 		print("Timer ended in a platform scene — waiting for manual return.")
 		can_leave_platform = true
-		timer.stop()  # ✅ Stop the timer to freeze it at 0
+		timer.stop()
