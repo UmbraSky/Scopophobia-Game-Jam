@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bagiqmqgtjn7b"]
+[gd_scene load_steps=14 format=3 uid="uid://bagiqmqgtjn7b"]
 
 [ext_resource type="PackedScene" uid="uid://foetv4uekqc" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://bslet7l63no4c" path="res://scenes/platform.tscn" id="2_0wfyh"]
@@ -7,8 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://ddwerr7kmnxb7" path="res://scenes/test1.tscn" id="5_o6xl0"]
 [ext_resource type="Script" uid="uid://b6iclrg5dddpo" path="res://scripts/SceneManager.gd" id="6_tefeu"]
 [ext_resource type="Script" uid="uid://dr6mwhgdsaji1" path="res://scripts/world_border.gd" id="7_o6xl0"]
-[ext_resource type="Script" path="res://scenes/music_manager.gd" id="8_ya4ey"]
+[ext_resource type="Script" uid="uid://bah8bf8j51fc0" path="res://scenes/music_manager.gd" id="8_ya4ey"]
 [ext_resource type="AudioStream" uid="uid://dddtw6k5qn8t1" path="res://audio/Scopophobia-T-3.1-Loop.mp3" id="9_eb6dy"]
+[ext_resource type="AudioStream" uid="uid://2bjq4bynp2ul" path="res://audio/Scopophobia-L-2-Loop.mp3" id="9_trceg"]
 [ext_resource type="AudioStream" uid="uid://bx3xexlpv1nge" path="res://audio/Scopophobia-W-1-Loop.mp3" id="10_trceg"]
 [ext_resource type="AudioStream" uid="uid://cde18nss4tmw6" path="res://audio/Scopophobia-C-2-Loop.mp3" id="11_a8y0u"]
 
@@ -70,6 +71,7 @@ script = ExtResource("8_ya4ey")
 
 [node name="Main" type="AudioStreamPlayer2D" parent="MusicManager"]
 position = Vector2(-950, 111)
+stream = ExtResource("9_trceg")
 
 [node name="Theater" type="AudioStreamPlayer2D" parent="MusicManager"]
 position = Vector2(-950, 111)

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Scopophobia"
-run/main_scene="uid://bagiqmqgtjn7b"
+run/main_scene="uid://cax6obsigb8ns"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
 [autoload]
@@ -22,6 +22,7 @@ GameState="*res://scripts/GameState.gd"
 InventoryManager="*res://scripts/Inventory_Manager.gd"
 GlobalCodeManager="*res://scripts/GlobalCodeManager.gd"
 Inventory="*res://scripts/Inventory.gd"
+MusicManager="*res://scenes/music_manager.gd"
 
 [global_group]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://dtc6oc68k6up4"]
+[gd_scene load_steps=24 format=4 uid="uid://dtc6oc68k6up4"]
 
 [ext_resource type="PackedScene" uid="uid://bdwpngq0nl1p" path="res://scenes/clownenemy.tscn" id="2_em5cf"]
 [ext_resource type="Texture2D" uid="uid://cb1rqnj1fr4s2" path="res://images/Platforms.png" id="2_gmvnm"]
@@ -8,6 +8,12 @@
 [ext_resource type="Script" uid="uid://dr6mwhgdsaji1" path="res://scripts/world_border.gd" id="5_8iwot"]
 [ext_resource type="PackedScene" uid="uid://c68tlmyufwk5c" path="res://scenes/axe.tscn" id="8_qget2"]
 [ext_resource type="PackedScene" uid="uid://51bl3fcwv6hr" path="res://scenes/child.tscn" id="8_u23n4"]
+[ext_resource type="Script" uid="uid://b6iclrg5dddpo" path="res://scripts/SceneManager.gd" id="9_74y24"]
+[ext_resource type="Script" uid="uid://bah8bf8j51fc0" path="res://scenes/music_manager.gd" id="10_pm6ke"]
+[ext_resource type="AudioStream" uid="uid://2bjq4bynp2ul" path="res://audio/Scopophobia-L-2-Loop.mp3" id="11_4pb7x"]
+[ext_resource type="AudioStream" uid="uid://dddtw6k5qn8t1" path="res://audio/Scopophobia-T-3.1-Loop.mp3" id="12_uow06"]
+[ext_resource type="AudioStream" uid="uid://bx3xexlpv1nge" path="res://audio/Scopophobia-W-1-Loop.mp3" id="13_y84li"]
+[ext_resource type="AudioStream" uid="uid://cde18nss4tmw6" path="res://audio/Scopophobia-C-2-Loop.mp3" id="14_0dn8e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ilhlq"]
 
@@ -406,5 +412,27 @@ collision_enabled = false
 
 [node name="KeyItem" parent="." instance=ExtResource("8_qget2")]
 position = Vector2(1696, -1481)
+
+[node name="SceneManager" type="Node" parent="."]
+script = ExtResource("9_74y24")
+
+[node name="MusicManager" type="Node" parent="."]
+script = ExtResource("10_pm6ke")
+
+[node name="Main" type="AudioStreamPlayer2D" parent="MusicManager"]
+position = Vector2(-950, 111)
+stream = ExtResource("11_4pb7x")
+
+[node name="Theater" type="AudioStreamPlayer2D" parent="MusicManager"]
+position = Vector2(-950, 111)
+stream = ExtResource("12_uow06")
+
+[node name="Woods" type="AudioStreamPlayer2D" parent="MusicManager"]
+position = Vector2(-950, 111)
+stream = ExtResource("13_y84li")
+
+[node name="Carnival" type="AudioStreamPlayer2D" parent="MusicManager"]
+position = Vector2(-950, 111)
+stream = ExtResource("14_0dn8e")
 
 [connection signal="body_entered" from="WorldBorder" to="WorldBorder" method="_on_body_entered"]

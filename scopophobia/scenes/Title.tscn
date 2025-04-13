@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://cax6obsigb8ns"]
+
+[ext_resource type="Texture2D" uid="uid://d2c0svq7gh263" path="res://images/Logo.png" id="1_ascc0"]
+[ext_resource type="Script" uid="uid://3ounow58a7jg" path="res://scripts/title.gd" id="1_lq0lj"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.63153, 1.63184)
+script = ExtResource("1_lq0lj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_ascc0")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 412.0
+offset_top = 266.0
+offset_right = 600.0
+offset_bottom = 306.0
+scale = Vector2(1.55719, 1.70648)
+text = "PRESS ENTER TO PLAY"
