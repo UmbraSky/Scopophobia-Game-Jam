@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqkd6c5eckb6u"]
+
+[ext_resource type="Script" uid="uid://cf1681alrkdta" path="res://scripts/use_spot.gd" id="1_a7fo6"]
+
+[node name="UseSpot" type="Area2D"]
+script = ExtResource("1_a7fo6")

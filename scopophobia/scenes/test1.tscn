@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=4 uid="uid://ddwerr7kmnxb7"]
 
+[ext_resource type="PackedScene" uid="uid://c4onarblsccxb" path="res://scenes/theaterenemy.tscn" id="2_6yyso"]
 [ext_resource type="PackedScene" uid="uid://foetv4uekqc" path="res://scenes/player.tscn" id="2_h46hq"]
 [ext_resource type="Texture2D" uid="uid://cb1rqnj1fr4s2" path="res://images/Platforms.png" id="2_ip444"]
-[ext_resource type="PackedScene" uid="uid://dqpscu1cxdssb" path="res://scenes/enemy.tscn" id="2_rnshl"]
-[ext_resource type="PhysicsMaterial" uid="uid://cu7647uijkf2m" path="res://theater.tres" id="2_x62gx"]
+[ext_resource type="PhysicsMaterial" uid="uid://cu7647uijkf2m" path="res://Tres/theater.tres" id="2_x62gx"]
 [ext_resource type="Script" uid="uid://dr6mwhgdsaji1" path="res://scripts/world_border.gd" id="4_x62gx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h46hq"]
@@ -335,9 +335,8 @@ countdown_duration = 30.0
 acceleration = 700.0
 deceleration = 1200.0
 
-[node name="Enemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_rnshl")]
-position = Vector2(-84, -272)
-speed = 400
+[node name="Enemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_6yyso")]
+position = Vector2(1900, -1031)
 player = NodePath("../Player")
 
 [node name="SpawnPoint" type="Node2D" parent="."]

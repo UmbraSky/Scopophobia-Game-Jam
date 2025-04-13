@@ -12,6 +12,19 @@ func update_hearts(hearts: int):
 		var heart = hearts_container.get_child(i)
 		heart.visible = i < hearts
 
+@onready var inventory_container := $"InventoryContainer"  # Add a new HBoxContainer in the scene
+
+func update_inventory(items: Array[String]):
+	for child in inventory_container.get_children():
+		child.queue_free()
+
+	for item in items:
+		var icon = TextureRect.new()
+		icon.texture = preload("res://assets/items/%s.png" % item)
+		icon.expand_mode = TextureRect.EXPAND_KEEP_SIZE
+		icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT
+		inventory_container.add_child(icon)
+
 var transition_stage := 0
 
 func set_countdown_text(text: String):

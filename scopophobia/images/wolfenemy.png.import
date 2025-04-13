@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr0jp1ekbn8pe"
-path="res://.godot/imported/Untitled108_20250413112008-removebg-preview.png-10b9b7cf92068c827c71325aceca0428.ctex"
+uid="uid://cx45ql1umbxlr"
+path="res://.godot/imported/wolfenemy.png-77f6d817dea6d57aca57e7f713ac3318.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/Untitled108_20250413112008-removebg-preview.png"
-dest_files=["res://.godot/imported/Untitled108_20250413112008-removebg-preview.png-10b9b7cf92068c827c71325aceca0428.ctex"]
+source_file="res://images/wolfenemy.png"
+dest_files=["res://.godot/imported/wolfenemy.png-77f6d817dea6d57aca57e7f713ac3318.ctex"]
 
 [params]
 

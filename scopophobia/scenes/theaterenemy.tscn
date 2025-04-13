@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4onarblsccxb"]
+
+[ext_resource type="Script" uid="uid://wkiu6dt8f7qg" path="res://scripts/enemy.gd" id="1_svbeo"]
+[ext_resource type="Texture2D" uid="uid://2h01syxrspe2" path="res://images/theaterenemy.png" id="2_svbeo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cpu6f"]
+radius = 5.54227
+height = 54.1405
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_svbeo"]
+radius = 127.0
+height = 300.0
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_svbeo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.717244, 0.668929)
+texture = ExtResource("2_svbeo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-14, 42)
+scale = Vector2(-16.5911, -4.78238)
+shape = SubResource("CapsuleShape2D_cpu6f")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.113
+autostart = true
+
+[node name="DamageArea" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea"]
+position = Vector2(-17, 41)
+shape = SubResource("CapsuleShape2D_svbeo")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

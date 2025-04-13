@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://fui51dqnyopm" path="res://scripts/ferris_wheel.gd" id="1_4pths"]
 [ext_resource type="Script" uid="uid://edw4gr205y71" path="res://scripts/platformattatch.gd" id="2_77c0o"]
-[ext_resource type="PhysicsMaterial" uid="uid://dqu0ij5iceaka" path="res://nontheater.tres" id="2_pgghg"]
+[ext_resource type="PhysicsMaterial" uid="uid://dqu0ij5iceaka" path="res://Tres/nontheater.tres" id="2_pgghg"]
 [ext_resource type="Texture2D" uid="uid://cb1rqnj1fr4s2" path="res://images/Platforms.png" id="3_77c0o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qjj0a"]

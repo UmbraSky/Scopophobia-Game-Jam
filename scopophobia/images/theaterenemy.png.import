@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhuqmr8gspewn"
-path="res://.godot/imported/Untitled108_20250413111950-removebg-preview.png-dc108d004995887d65b7a82115ef3e25.ctex"
+uid="uid://2h01syxrspe2"
+path="res://.godot/imported/theaterenemy.png-a9ca7d1fecbc2534db89d055b879e618.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/Untitled108_20250413111950-removebg-preview.png"
-dest_files=["res://.godot/imported/Untitled108_20250413111950-removebg-preview.png-dc108d004995887d65b7a82115ef3e25.ctex"]
+source_file="res://images/theaterenemy.png"
+dest_files=["res://.godot/imported/theaterenemy.png-a9ca7d1fecbc2534db89d055b879e618.ctex"]
 
 [params]
 

@@ -81,7 +81,6 @@ func _physics_process(delta: float) -> void:
 	
 	var run_state : bool = false
 	if (direction < 0 or direction > 0) and sprite_2d.animation != "Run":
-		print("Running")
 		sprite_2d.play("Run")
 	elif direction == 0:
 		sprite_2d.play("Idle")

@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://foetv4uekqc"]
 
 [ext_resource type="Script" uid="uid://bjmt5scm5nj1p" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://dfm62db5ndqlp" path="res://images/output-onlinepngtools.png" id="2_dqkch"]
-[ext_resource type="Texture2D" uid="uid://dhuqmr8gspewn" path="res://images/Untitled108_20250413111950-removebg-preview.png" id="3_qlg0r"]
-[ext_resource type="Texture2D" uid="uid://cr0jp1ekbn8pe" path="res://images/Untitled108_20250413112008-removebg-preview.png" id="4_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://dfm62db5ndqlp" path="res://images/Idle.png" id="2_dqkch"]
+[ext_resource type="Texture2D" uid="uid://dhuqmr8gspewn" path="res://images/Run1.png" id="3_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://cr0jp1ekbn8pe" path="res://images/Run2.png" id="4_tuyoq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qlg0r"]
 animations = [{
