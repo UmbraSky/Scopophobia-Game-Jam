@@ -4,26 +4,26 @@ extends CanvasLayer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var top_lid: ColorRect = $TopLid
 @onready var bottom_lid: ColorRect = $BottomLid
+@onready var hearts_container := $"HeartsContainer"
 
-@onready var hearts_container := $"HeartsContainer"  # Node with Sprite or TextureRects as hearts
+@onready var item_slots := {
+	"key1": $"InventoryDisplay/Key1",
+	"key2": $"InventoryDisplay/Key2",
+	"key3": $"InventoryDisplay/Key3"
+}
+
+func _ready():
+	Inventory.inventory_updated.connect(update_inventory_display)
+	update_inventory_display()
 
 func update_hearts(hearts: int):
 	for i in hearts_container.get_child_count():
 		var heart = hearts_container.get_child(i)
 		heart.visible = i < hearts
 
-@onready var inventory_container := $"InventoryContainer"  # Add a new HBoxContainer in the scene
-
-func update_inventory(items: Array[String]):
-	for child in inventory_container.get_children():
-		child.queue_free()
-
-	for item in items:
-		var icon = TextureRect.new()
-		icon.texture = preload("res://assets/items/%s.png" % item)
-		icon.expand_mode = TextureRect.EXPAND_KEEP_SIZE
-		icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT
-		inventory_container.add_child(icon)
+func update_inventory_display():
+	for item_name in item_slots:
+		item_slots[item_name].visible = Inventory.has_item(item_name)
 
 var transition_stage := 0
 

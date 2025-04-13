@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ddwerr7kmnxb7" path="res://scenes/test1.tscn" id="5_o6xl0"]
 [ext_resource type="Script" uid="uid://b6iclrg5dddpo" path="res://scripts/SceneManager.gd" id="6_tefeu"]
 [ext_resource type="Script" uid="uid://dr6mwhgdsaji1" path="res://scripts/world_border.gd" id="7_o6xl0"]
-[ext_resource type="Script" uid="uid://bah8bf8j51fc0" path="res://scenes/music_manager.gd" id="8_ya4ey"]
+[ext_resource type="Script" path="res://scenes/music_manager.gd" id="8_ya4ey"]
 [ext_resource type="AudioStream" uid="uid://dddtw6k5qn8t1" path="res://audio/Scopophobia-T-3.1-Loop.mp3" id="9_eb6dy"]
 [ext_resource type="AudioStream" uid="uid://bx3xexlpv1nge" path="res://audio/Scopophobia-W-1-Loop.mp3" id="10_trceg"]
 [ext_resource type="AudioStream" uid="uid://cde18nss4tmw6" path="res://audio/Scopophobia-C-2-Loop.mp3" id="11_a8y0u"]
@@ -21,7 +21,7 @@ size = Vector2(4174, 20)
 position = Vector2(-950, 111)
 SPEED = 400.0
 JUMP_VELOCITY = -800.0
-acceleration = 700.0
+acceleration = 850.0
 deceleration = 1200.0
 
 [node name="Platform1" parent="." instance=ExtResource("2_0wfyh")]

@@ -1,29 +1,57 @@
 extends Area2D
 
 @export var required_item: String
-@export var reveal_number: String
+@export var used_texture: Texture
+@export var scene_name: String = ""
 
-@export var unused_texture: Texture2D
-@export var used_texture: Texture2D
+@onready var sprite: Sprite2D = $Sprite2D
+@onready var number_label: Label = get_node_or_null("NumberLabel")
+@onready var prompt_label: Label = get_node_or_null("PromptLabel")
 
-@onready var sprite := $Sprite2D
-
-var used := false
+var can_interact: bool = false
+var used: bool = false
 
 func _ready():
-	sprite.texture = unused_texture
+	if number_label:
+		number_label.visible = false
+	if prompt_label:
+		prompt_label.visible = false
+	connect("body_entered", Callable(self, "_on_body_entered"))
+	connect("body_exited", Callable(self, "_on_body_exited"))
 
-func _on_body_entered(body):
-	if body.is_in_group("player") and not used:
-		if InventoryManager.has_item(required_item):
-			used = true
-			InventoryManager.remove_item(required_item)
-			sprite.texture = used_texture  # 💡 Change the visual to show it's used
-			show_number()
+func _on_body_entered(body: Node) -> void:
+	print("Body entered:", body.name)
+	if body.is_in_group("player"):
+		print("Player can interact!")
+		can_interact = true
+		if prompt_label:
+			prompt_label.visible = true
 
-func show_number():
-	var label = Label.new()
-	label.text = "[color=red]%s[/color]" % reveal_number
-	label.bbcode_enabled = true
-	label.position = Vector2(0, -30)
-	add_child(label)
+func _on_body_exited(body: Node) -> void:
+	if body.is_in_group("player"):
+		can_interact = false
+		if prompt_label:
+			prompt_label.visible = false
+
+func _process(_delta: float) -> void:
+	if can_interact and not used and Input.is_action_just_pressed("ui_accept"):
+		print("Trying to use item:", required_item)
+		print("Has item?", Inventory.has_item(required_item))
+		print("Scene name:", scene_name)
+		print("Code already assigned?", Inventory.code_numbers[scene_name])
+		
+		if Inventory.has_item(required_item):
+			var number = Inventory.use_item(scene_name, required_item)
+			if number != -1:
+				sprite.texture = used_texture
+				show_number(number)
+				used = true
+				if prompt_label:
+					prompt_label.visible = false
+			else:
+				print("Item use failed (maybe already used or bad scene?)")
+
+func show_number(number: int) -> void:
+	if number_label:
+		number_label.text = str(number)
+		number_label.visible = true

@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjl728lf2a6xq"]
+
+[ext_resource type="Script" uid="uid://cf1681alrkdta" path="res://scripts/use_spot.gd" id="1_j1qx7"]
+[ext_resource type="Texture2D" uid="uid://byjxbmkoyqo6e" path="res://images/skullstatue.png" id="2_6wwjp"]
+[ext_resource type="Texture2D" uid="uid://d25nj547g03c8" path="res://images/statue.png" id="2_sxr8y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6wwjp"]
+size = Vector2(29.5227, 25.4302)
+
+[node name="Statue" type="Area2D"]
+script = ExtResource("1_j1qx7")
+required_item = "skull"
+used_texture = ExtResource("2_6wwjp")
+scene_name = "test1"
+
+[node name="NumberLabel" type="Label" parent="."]
+offset_left = -203.0
+offset_top = -298.0
+offset_right = -163.0
+offset_bottom = -275.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-94, -155)
+scale = Vector2(1.08383, 0.983257)
+texture = ExtResource("2_sxr8y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-15.5, -170)
+scale = Vector2(13.7183, 20.1335)
+shape = SubResource("RectangleShape2D_6wwjp")
+
+[node name="PromptLabel" type="Label" parent="."]
+offset_left = -73.0
+offset_top = -367.0
+offset_right = 59.0
+offset_bottom = -344.0
+text = "Press E to Use"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

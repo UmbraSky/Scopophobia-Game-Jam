@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://c25aodh4wj4kq"]
+
+[ext_resource type="Script" uid="uid://cf1681alrkdta" path="res://scripts/use_spot.gd" id="1_c6xkf"]
+[ext_resource type="Texture2D" uid="uid://bv8nkkel317ys" path="res://images/stumpaxe.png" id="2_7qlwd"]
+[ext_resource type="Texture2D" uid="uid://dhvno0aqxjno4" path="res://images/stump.png" id="3_s6exu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7qlwd"]
+
+[node name="Stump" type="Area2D"]
+script = ExtResource("1_c6xkf")
+required_item = "ax"
+used_texture = ExtResource("2_7qlwd")
+scene_name = "test2"
+
+[node name="NumberLabel" type="Label" parent="."]
+offset_left = -19.0
+offset_top = -170.0
+offset_right = 21.0
+offset_bottom = -147.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-25, -99)
+scale = Vector2(1.08383, 0.983257)
+texture = ExtResource("3_s6exu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, -4)
+scale = Vector2(8.94713, 6.18647)
+shape = SubResource("RectangleShape2D_7qlwd")
+
+[node name="PromptLabel" type="Label" parent="."]
+offset_left = -52.0
+offset_top = -138.0
+offset_right = 63.0
+offset_bottom = -115.0
+text = "Press E to Use"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

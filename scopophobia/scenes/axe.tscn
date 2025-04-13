@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://c68tlmyufwk5c"]
+
+[ext_resource type="Script" uid="uid://bmb64dxc0hvss" path="res://scripts/KeyItem.gd" id="1_odgf8"]
+[ext_resource type="Texture2D" uid="uid://dcn62flcept2i" path="res://images/ax.png" id="2_725vr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_725vr"]
+size = Vector2(22.7407, 21.7)
+
+[node name="KeyItem" type="Area2D"]
+script = ExtResource("1_odgf8")
+item_name = "ax"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-10.8721, 3.66667)
+scale = Vector2(2.82558, 6.66667)
+shape = SubResource("RectangleShape2D_725vr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, 0)
+scale = Vector2(0.348485, 0.313008)
+texture = ExtResource("2_725vr")
+
+[node name="PromptLabel" type="Label" parent="."]
+offset_left = -69.0
+offset_top = -173.0
+offset_right = 63.0
+offset_bottom = -150.0
+text = "Press E to Collect"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

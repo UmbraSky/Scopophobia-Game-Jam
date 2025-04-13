@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cr6sygm8no73h"]
+
+[ext_resource type="Script" uid="uid://bmb64dxc0hvss" path="res://scripts/KeyItem.gd" id="1_ikgxt"]
+[ext_resource type="Texture2D" uid="uid://5e2i20aafulr" path="res://images/ballons.png" id="2_b6t3u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6t3u"]
+size = Vector2(44.1383, 39.8073)
+
+[node name="KeyItem" type="Area2D"]
+scale = Vector2(0.415421, 0.360406)
+script = ExtResource("1_ikgxt")
+item_name = "ballons"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8.42519, -19.4225)
+scale = Vector2(6.27183, 8.92185)
+shape = SubResource("RectangleShape2D_b6t3u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 2)
+texture = ExtResource("2_b6t3u")
+
+[node name="PromptLabel" type="Label" parent="."]
+offset_left = -62.5871
+offset_top = -210.873
+offset_right = 69.4129
+offset_bottom = -187.873
+text = "Press E to Collect"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
