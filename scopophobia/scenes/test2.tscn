@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cb1rqnj1fr4s2" path="res://images/Platforms.png" id="2_uxr5t"]
 [ext_resource type="Script" uid="uid://dr6mwhgdsaji1" path="res://scripts/world_border.gd" id="3_uxr5t"]
 [ext_resource type="PackedScene" uid="uid://btr2ceiwejhy8" path="res://scenes/skull.tscn" id="5_jorxo"]
-[ext_resource type="Texture2D" uid="uid://dhvno0aqxjno4" path="res://images/stump.png" id="6_kamxp"]
+[ext_resource type="PackedScene" uid="uid://c25aodh4wj4kq" path="res://scenes/stump.tscn" id="5_kamxp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cy281"]
 
@@ -306,13 +306,12 @@ position = Vector2(1177, 659)
 scale = Vector2(4.4985, 30.9119)
 shape = SubResource("RectangleShape2D_51wsq")
 
+[node name="Stump" parent="." instance=ExtResource("5_kamxp")]
+position = Vector2(2616, 50)
+
 [node name="KeyItem" parent="." instance=ExtResource("5_jorxo")]
 position = Vector2(5818, -423)
 scale = Vector2(0.499649, 0.440766)
-
-[node name="Stump" type="Sprite2D" parent="."]
-position = Vector2(2590, -47)
-texture = ExtResource("6_kamxp")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 scale = Vector2(-4.22634, 3.89308)

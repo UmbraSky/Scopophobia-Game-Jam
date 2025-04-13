@@ -18,10 +18,11 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_sco77")
 
 [node name="PromptLabel" type="Label" parent="."]
-offset_left = -55.0
-offset_top = -269.0
-offset_right = 77.0
-offset_bottom = -246.0
+offset_left = -216.0
+offset_top = -271.0
+offset_right = -84.0
+offset_bottom = -248.0
+scale = Vector2(3.52195, 3.38008)
 text = "Press E to Collect"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

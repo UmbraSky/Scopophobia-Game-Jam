@@ -3,9 +3,9 @@ extends Node
 signal inventory_updated
 
 var items = {
-	"key1": false,
-	"key2": false,
-	"key3": false
+	"skull": false,
+	"ax": false,
+	"ballons": false
 }
 
 var code_numbers = {
