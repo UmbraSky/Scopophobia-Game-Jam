@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var deceleration := 600.0  # How quickly the player decelerates when not moving
 
 @onready var timer: Timer = $Timer
-@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 var current_platform_id: int
 var platform_scenes := {}
@@ -78,7 +78,13 @@ func _physics_process(delta: float) -> void:
 		sprite_2d.flip_h = true 
 	if direction < 0:
 		sprite_2d.flip_h = false
-
+	
+	var run_state : bool = false
+	if (direction < 0 or direction > 0) and sprite_2d.animation != "Run":
+		print("Running")
+		sprite_2d.play("Run")
+	elif direction == 0:
+		sprite_2d.play("Idle")
 	move_and_slide()
 
 func _on_timer_timeout():

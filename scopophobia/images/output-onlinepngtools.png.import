@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8yw0mmcguces"
-path="res://.godot/imported/player_scopophobia.png-904d377dbe6082f0fd1f27835f290b14.ctex"
+uid="uid://dfm62db5ndqlp"
+path="res://.godot/imported/output-onlinepngtools.png-5ccd08f1963921a8f789b519f5cea36d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/player_scopophobia.png"
-dest_files=["res://.godot/imported/player_scopophobia.png-904d377dbe6082f0fd1f27835f290b14.ctex"]
+source_file="res://images/output-onlinepngtools.png"
+dest_files=["res://.godot/imported/output-onlinepngtools.png-5ccd08f1963921a8f789b519f5cea36d.ctex"]
 
 [params]
 
