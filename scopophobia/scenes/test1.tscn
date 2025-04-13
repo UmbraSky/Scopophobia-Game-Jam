@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://ddwerr7kmnxb7"]
+[gd_scene load_steps=21 format=4 uid="uid://ddwerr7kmnxb7"]
 
 [ext_resource type="PackedScene" uid="uid://c4onarblsccxb" path="res://scenes/theaterenemy.tscn" id="2_6yyso"]
 [ext_resource type="PackedScene" uid="uid://foetv4uekqc" path="res://scenes/player.tscn" id="2_h46hq"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://bx3xexlpv1nge" path="res://audio/Scopophobia-W-1-Loop.mp3" id="11_o5jvj"]
 [ext_resource type="AudioStream" uid="uid://cde18nss4tmw6" path="res://audio/Scopophobia-C-2-Loop.mp3" id="12_acji4"]
 [ext_resource type="Script" uid="uid://b6iclrg5dddpo" path="res://scripts/SceneManager.gd" id="13_xmbrk"]
+[ext_resource type="Texture2D" uid="uid://cccexjmpbq7vb" path="res://images/theater.webp" id="14_uea8f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h46hq"]
 texture = ExtResource("2_ip444")
@@ -406,5 +407,16 @@ stream = ExtResource("12_acji4")
 
 [node name="SceneManager" type="Node" parent="."]
 script = ExtResource("13_xmbrk")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+scale = Vector2(4.5, 4.5)
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-260.667, -249.556)
+texture = ExtResource("14_uea8f")
+centered = false
 
 [connection signal="body_entered" from="WorldBorder" to="WorldBorder" method="_on_body_entered"]

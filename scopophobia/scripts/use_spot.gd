@@ -41,7 +41,7 @@ func _process(_delta: float) -> void:
 		print("Code already assigned?", Inventory.code_numbers[scene_name])
 		
 		if Inventory.has_item(required_item):
-			var number = Inventory.use_item(scene_name, required_item)
+			var number = Inventory.use_item(required_item)
 			if number != -1:
 				sprite.texture = used_texture
 				show_number(number)

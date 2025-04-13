@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://0xafgnht3tqh"]
+[gd_scene load_steps=21 format=4 uid="uid://0xafgnht3tqh"]
 
 [ext_resource type="PackedScene" uid="uid://c7272jeuowe0u" path="res://scenes/wolfenemy.tscn" id="2_51wsq"]
 [ext_resource type="PackedScene" uid="uid://foetv4uekqc" path="res://scenes/player.tscn" id="2_cy281"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://dddtw6k5qn8t1" path="res://audio/Scopophobia-T-3.1-Loop.mp3" id="10_4hh2r"]
 [ext_resource type="AudioStream" uid="uid://bx3xexlpv1nge" path="res://audio/Scopophobia-W-1-Loop.mp3" id="11_jjt6x"]
 [ext_resource type="AudioStream" uid="uid://cde18nss4tmw6" path="res://audio/Scopophobia-C-2-Loop.mp3" id="12_clb5c"]
+[ext_resource type="Texture2D" uid="uid://dxr5w6eqp6ubn" path="res://images/woods.jpg" id="13_840ub"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cy281"]
 
@@ -346,5 +347,16 @@ stream = ExtResource("11_jjt6x")
 [node name="Carnival" type="AudioStreamPlayer2D" parent="MusicManager"]
 position = Vector2(-950, 111)
 stream = ExtResource("12_clb5c")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+scale = Vector2(2, 2)
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-402.5, -224)
+texture = ExtResource("13_840ub")
+centered = false
 
 [connection signal="body_entered" from="WorldBorder" to="WorldBorder" method="_on_body_entered"]

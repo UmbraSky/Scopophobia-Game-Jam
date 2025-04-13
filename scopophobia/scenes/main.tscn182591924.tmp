@@ -89,11 +89,8 @@ stream = ExtResource("11_a8y0u")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-scale = Vector2(1.5, 1.5)
-motion_scale = Vector2(0.2, 0.2)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(-289.333, -234.667)
 texture = ExtResource("13_trceg")
 centered = false
 
