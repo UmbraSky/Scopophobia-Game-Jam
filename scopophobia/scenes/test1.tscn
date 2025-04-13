@@ -389,20 +389,16 @@ scale = Vector2(0.984047, 0.850344)
 [node name="MusicManager" type="Node" parent="."]
 script = ExtResource("8_exc4g")
 
-[node name="Main" type="AudioStreamPlayer2D" parent="MusicManager"]
-position = Vector2(-950, 111)
+[node name="Main" type="AudioStreamPlayer" parent="MusicManager"]
 stream = ExtResource("9_uea8f")
 
-[node name="Theater" type="AudioStreamPlayer2D" parent="MusicManager"]
-position = Vector2(-950, 111)
+[node name="Theater" type="AudioStreamPlayer" parent="MusicManager"]
 stream = ExtResource("10_s7mpx")
 
-[node name="Woods" type="AudioStreamPlayer2D" parent="MusicManager"]
-position = Vector2(-950, 111)
+[node name="Woods" type="AudioStreamPlayer" parent="MusicManager"]
 stream = ExtResource("11_o5jvj")
 
-[node name="Carnival" type="AudioStreamPlayer2D" parent="MusicManager"]
-position = Vector2(-950, 111)
+[node name="Carnival" type="AudioStreamPlayer" parent="MusicManager"]
 stream = ExtResource("12_acji4")
 
 [node name="SceneManager" type="Node" parent="."]

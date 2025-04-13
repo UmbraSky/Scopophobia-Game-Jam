@@ -70,20 +70,16 @@ shape = SubResource("RectangleShape2D_tipki")
 [node name="MusicManager" type="Node" parent="."]
 script = ExtResource("8_ya4ey")
 
-[node name="Main" type="AudioStreamPlayer2D" parent="MusicManager"]
-position = Vector2(-950, 111)
+[node name="Main" type="AudioStreamPlayer" parent="MusicManager"]
 stream = ExtResource("9_trceg")
 
-[node name="Theater" type="AudioStreamPlayer2D" parent="MusicManager"]
-position = Vector2(-950, 111)
+[node name="Theater" type="AudioStreamPlayer" parent="MusicManager"]
 stream = ExtResource("9_eb6dy")
 
-[node name="Woods" type="AudioStreamPlayer2D" parent="MusicManager"]
-position = Vector2(-950, 111)
+[node name="Woods" type="AudioStreamPlayer" parent="MusicManager"]
 stream = ExtResource("10_trceg")
 
-[node name="Carnival" type="AudioStreamPlayer2D" parent="MusicManager"]
-position = Vector2(-950, 111)
+[node name="Carnival" type="AudioStreamPlayer" parent="MusicManager"]
 stream = ExtResource("11_a8y0u")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]

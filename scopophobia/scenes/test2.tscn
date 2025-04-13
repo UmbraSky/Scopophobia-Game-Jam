@@ -332,20 +332,16 @@ script = ExtResource("7_1wx16")
 [node name="MusicManager" type="Node" parent="."]
 script = ExtResource("8_840ub")
 
-[node name="Main" type="AudioStreamPlayer2D" parent="MusicManager"]
-position = Vector2(-950, 111)
+[node name="Main" type="AudioStreamPlayer" parent="MusicManager"]
 stream = ExtResource("9_cqtf4")
 
-[node name="Theater" type="AudioStreamPlayer2D" parent="MusicManager"]
-position = Vector2(-950, 111)
+[node name="Theater" type="AudioStreamPlayer" parent="MusicManager"]
 stream = ExtResource("10_4hh2r")
 
-[node name="Woods" type="AudioStreamPlayer2D" parent="MusicManager"]
-position = Vector2(-950, 111)
+[node name="Woods" type="AudioStreamPlayer" parent="MusicManager"]
 stream = ExtResource("11_jjt6x")
 
-[node name="Carnival" type="AudioStreamPlayer2D" parent="MusicManager"]
-position = Vector2(-950, 111)
+[node name="Carnival" type="AudioStreamPlayer" parent="MusicManager"]
 stream = ExtResource("12_clb5c")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
